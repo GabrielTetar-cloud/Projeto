@@ -3,7 +3,6 @@ from unittest.mock import patch
 
 
 
-
 def teste_root():
     assert root() == {"message":"Heloo World"}
 
@@ -17,7 +16,7 @@ def funcaoteste():
 
 def teste_create_estudante():
     estudante_teste = Estudante(name='Gabriel', curso='ADS', ativo=False)
-    assert estudante_teste == create_estudante()
+    assert estudante_teste == create_estudante(estudante_teste)
 
 
 def teste_update_estudante_negativo():
