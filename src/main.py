@@ -27,6 +27,6 @@ async def funcaoteste():
 @app.get("/estudantes/update/{id_estudante}")
 async def update_estudante(id_estudante: int):
     return id_estudante > 0
-@pp.delete("/estudantes/delete/{id_estudante}")
+@app.delete("/estudantes/delete/{id_estudante}")
 async def delete_estudante(id_estudante: int):
     return id_estudante > 0
