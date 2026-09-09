@@ -24,9 +24,10 @@ jobs:
             **/*.py
             README.md
 
-  deploy:
+
+  docker:
     runs-on: ubuntu-latest
-    needs: deliver
+    needs: deploy
 
     steps:
       - name: Download projeto
@@ -34,5 +35,8 @@ jobs:
         with:
           name: projetozipado
 
-      - name: Display structure of download files
-        run: ls -R
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          push: false
+          tags: user/app:latest
